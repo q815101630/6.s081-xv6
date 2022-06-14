@@ -295,6 +295,9 @@ fork(void)
 
   np->state = RUNNABLE;
 
+  // copy mask syscall id to trace
+  np->mask = p->mask;
+
   release(&np->lock);
 
   return pid;
